@@ -64,7 +64,8 @@ if (is_admin()) {
     new WP2GravAdmin($plugin, __FILE__);
     if ($_POST['wp2grav-action']) {
         // set screen context to site
-        require_once(ABSPATH . 'wp-admin/includes/screen.php');
+        require_once(ABSPATH . '/wp-admin/includes/class-wp-screen.php');
+
         if (function_exists('get_current_screen')) {
             $GLOBALS['current_screen'] = get_current_screen();
         } else {
